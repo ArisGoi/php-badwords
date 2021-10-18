@@ -22,7 +22,12 @@
     il mare, il tempo, tutti i pianeti, <br>
     la tua voce diurna e la tua pelle notturna.";
 
-    
+    // ottengo la parola con GET
+    $parola= $_GET['rpl'];
+
+    // Sostituisco la parola ottenuta (anche con maiuscola) con ***
+    $newTesto= str_replace($parola, '***', $testo);
+    $newTesto= str_replace(ucfirst($parola), '***', $newTesto);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +51,8 @@
 
     <hr>
 
+    <p><?php echo $newTesto ?></p>
+    <h5>La nuova poesia è lunga: <?php echo strlen($newTesto)?> caratteri</h5>
 
 </body>
 </html>
